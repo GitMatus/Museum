@@ -1,4 +1,4 @@
-package src.Museum;
+package Museum;
 
 import java.util.Scanner;
 

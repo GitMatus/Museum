@@ -6,12 +6,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
 
-        Ordering.howMany();
-        Ordering.whatType(Ordering.howMany());
 
-        System.out.println("You bought ticket");
-        System.out.println("Do you want to order more?");
+        Ticket[] aasdasdf = Ordering.whatType(Ordering.howMany());
 
+        for (Ticket asd : aasdasdf) {
+            System.out.println(asd);
+        }
 
     }
 }

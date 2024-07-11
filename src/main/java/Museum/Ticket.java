@@ -12,7 +12,7 @@ public class Ticket {
     public Ticket(String type, double price, LocalDate date) {
         this.type = type;
         this.price = mapPrice(type);
-        this.date = date;
+        this.date = LocalDate.now();
     }
 
     public static double mapPrice(String type) {
@@ -49,5 +49,13 @@ public class Ticket {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "type='" + type + '\'' +
+                ", date=" + date +
+                '}';
     }
 }

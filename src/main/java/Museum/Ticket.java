@@ -9,23 +9,29 @@ public class Ticket {
     String type;
     LocalDate date;
 
+
     public Ticket(String type, double price, LocalDate date) {
         this.type = type;
         this.price = mapPrice(type);
         this.date = LocalDate.now();
+
     }
 
     public static double mapPrice(String type) {
         switch (type) {
             case "regular":
                 price = 10.00d;
+                break;
             case "child":
                 price = 5.50d;
+                break;
             case "disabled":
                 price = 2.50d;
+                break;
 
         } return price;
     }
+
 
     public double getPrice() {
         return price;

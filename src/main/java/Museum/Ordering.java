@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Ordering {
 
+    public static int counter = 0;
 
     public static int howMany() {
         Scanner scannerQuantity = new Scanner(System.in);
@@ -21,19 +22,33 @@ public class Ordering {
     public static Ticket[] whatType(int ticketsNeeded) {
         Scanner scannerType = new Scanner(System.in);
         String type = "needs_input";
-        Ticket[] ticketArray = new Ticket[ticketsNeeded];
+        double cost = 0;
+        Ticket[] ticketArray = new Ticket[Ordering.counter + ticketsNeeded];
         for (int i = 0; i < ticketsNeeded; i++) {
             do {
                 Scanner scanner = new Scanner(System.in);
                 System.out.printf("What type of ticket will be your ticket #%d? (regular, child, disabled)\n", i + 1);
                 type = scanner.nextLine();
-                ticketArray[i] = new Ticket(type, Ticket.mapPrice(type), LocalDate.now());
+                if (type.equals("regular") || type.equals("child") || type.equals("disabled")){
+                    counter++;
+                    ticketArray[i] = new Ticket(type, Ticket.mapPrice(type), LocalDate.now());
+                    cost += Ticket.mapPrice(type);
+
+                }
             } while (!type.equals("regular") && !type.equals("child") && !type.equals("disabled"));
+
 
 //            System.out.println("For what date? (yyyy-mm-dd)");
 //            scanToLocalDate();
 
-        } return ticketArray;
+        } System.out.printf("Thank you for your order. Your price is %f\n", cost);
+        System.out.println("--------------------\n");
+        return ticketArray;
+
+
+    }
+
+    public static void orderconfirmation(double cost){
 
     }
 

@@ -1,17 +1,28 @@
 package Museum;
 
+import java.util.Objects;
 import java.util.Scanner;
+
+import static Museum.Ordering.counter;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner (System.in);
+        Scanner scanner = new Scanner(System.in);
 
+        do {
+            if (Login.admin(Login.login())) {
+                Admin.remainingCapacity(counter);
 
-        Ticket[] aasdasdf = Ordering.whatType(Ordering.howMany());
+            } else Ordering.whatType(Ordering.howMany());
+            Login.exit(Login.username);
+        } while (!Login.exit.equals("yes"));
 
-        for (Ticket asd : aasdasdf) {
-            System.out.println(asd);
-        }
+        System.out.println("Thank you for using Matus's museum ticket booking system.");
+//
+//        Ordering.whatType(Ordering.howMany());
+//
+//        System.out.println(counter);
+
 
     }
 }

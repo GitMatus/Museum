@@ -41,7 +41,7 @@ public class Ordering {
 //            System.out.println("For what date? (yyyy-mm-dd)");
 //            scanToLocalDate();
 
-        } System.out.printf("Thank you for your order. Your price is %f\n", cost);
+        } System.out.printf("Thank you for your order. Your price is %f\n\n", cost);
         System.out.println("--------------------\n");
         return ticketArray;
 
